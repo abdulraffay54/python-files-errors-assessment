@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="overviewTitle overviewDesc">
+  <title id="overviewTitle">Project overview</title>
+  <desc id="overviewDesc">Two task cards describing the expense tracker and attendance cleaner.</desc>
+  <rect width="1000" height="620" fill="#ffffff"/>
+  <text x="40" y="42" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#0f172a">Project Overview</text>
+  <text x="40" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">Two independent command-line tools built with Python’s file handling, exception handling, sets, and comprehensions.</text>
+
+  <rect x="40" y="90" width="450" height="480" rx="16" fill="#ffffff" stroke="#dbeafe" stroke-width="1.5"/>
+  <rect x="40" y="90" width="6" height="480" rx="3" fill="#2563eb"/>
+  <rect x="58" y="104" width="414" height="58" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="74" y="129" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="700" fill="#1d4ed8">expense_tracker.py</text>
+  <text x="74" y="149" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#475569">Daily expense records, CSV persistence, and category totals</text>
+
+  <text x="64" y="190" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#2563eb" letter-spacing="1">INPUT</text>
+  <text x="64" y="210" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">Menu choice 1–4, plus date, item, category, and amount.</text>
+  <text x="64" y="230" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">Existing rows are loaded from expenses.csv at startup.</text>
+
+  <text x="64" y="266" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#7c3aed" letter-spacing="1">RULES</text>
+  <text x="64" y="286" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Validate dates as YYYY-MM-DD.</text>
+  <text x="64" y="306" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Reject empty text and amounts that are not finite &gt; 0.</text>
+  <text x="64" y="326" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Catch FileNotFoundError when the CSV is missing.</text>
+  <text x="64" y="346" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Save after every successful addition.</text>
+  <text x="64" y="366" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Use a set for the unique category list.</text>
+
+  <text x="64" y="400" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#16a34a" letter-spacing="1">OUTPUT</text>
+  <text x="64" y="420" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">expenses.csv, a formatted table, and category totals.</text>
+  <text x="64" y="440" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">Amounts are stored with two decimal places.</text>
+
+  <text x="64" y="474" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="1">CONCEPTS</text>
+  <rect x="64" y="486" width="86" height="24" rx="12" fill="#dbeafe"/>
+  <text x="107" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#1d4ed8">CSV</text>
+  <rect x="158" y="486" width="108" height="24" rx="12" fill="#fee2e2"/>
+  <text x="212" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#b91c1c">Exceptions</text>
+  <rect x="274" y="486" width="64" height="24" rx="12" fill="#ede9fe"/>
+  <text x="306" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#6d28d9">Sets</text>
+  <rect x="346" y="486" width="126" height="24" rx="12" fill="#dcfce7"/>
+  <text x="409" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#15803d">Functions</text>
+
+  <rect x="510" y="90" width="450" height="480" rx="16" fill="#ffffff" stroke="#ede9fe" stroke-width="1.5"/>
+  <rect x="510" y="90" width="6" height="480" rx="3" fill="#7c3aed"/>
+  <rect x="528" y="104" width="414" height="58" rx="10" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="544" y="129" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="700" fill="#6d28d9">attendance_cleaner.py</text>
+  <text x="544" y="149" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#475569">Clean messy names, remove duplicates, and sort the list</text>
+
+  <text x="534" y="190" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#2563eb" letter-spacing="1">INPUT</text>
+  <text x="534" y="210" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">attendance.txt, with one raw student name per line.</text>
+  <text x="534" y="230" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">Names may contain repeated case and extra spaces.</text>
+
+  <text x="534" y="266" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#7c3aed" letter-spacing="1">RULES</text>
+  <text x="534" y="286" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Trim surrounding and internal spaces.</text>
+  <text x="534" y="306" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Apply title() in a single list comprehension.</text>
+  <text x="534" y="326" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Use a set to remove duplicate students.</text>
+  <text x="534" y="346" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Sort alphabetically before saving.</text>
+  <text x="534" y="366" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">• Report original and unique counts.</text>
+
+  <text x="534" y="400" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#16a34a" letter-spacing="1">OUTPUT</text>
+  <text x="534" y="420" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">attendance_clean.csv with one sorted name per row.</text>
+  <text x="534" y="440" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#334155">The console report also shows the cleaned list.</text>
+
+  <text x="534" y="474" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="1">CONCEPTS</text>
+  <rect x="534" y="486" width="108" height="24" rx="12" fill="#dbeafe"/>
+  <text x="588" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#1d4ed8">Text files</text>
+  <rect x="650" y="486" width="132" height="24" rx="12" fill="#dcfce7"/>
+  <text x="716" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#15803d">Comprehension</text>
+  <rect x="790" y="486" width="64" height="24" rx="12" fill="#ede9fe"/>
+  <text x="822" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#6d28d9">Sets</text>
+  <rect x="862" y="486" width="82" height="24" rx="12" fill="#fef3c7"/>
+  <text x="903" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#b45309">Sorting</text>
+
+  <text x="40" y="603" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#94a3b8">Both tools use only the Python standard library. The CSV and text outputs are human-readable and can be reopened later.</text>
+</svg>

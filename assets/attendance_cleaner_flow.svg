@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900" role="img" aria-labelledby="attendanceFlowTitle attendanceFlowDesc">
+  <title id="attendanceFlowTitle">Attendance Cleaner program flow</title>
+  <desc id="attendanceFlowDesc">Flowchart showing attendance input, empty-input validation, cleaning with a list comprehension, set deduplication, sorting, CSV output, and the console report.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="900" fill="#ffffff"/>
+  <text x="40" y="30" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Attendance Cleaner — Program Flow</text>
+  <text x="40" y="50" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748b">Read, validate, clean, deduplicate, sort, save, and report.</text>
+
+  <rect x="420" y="62" width="260" height="46" rx="23" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="550" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#15803d">START</text>
+  <path d="M550 108 V130" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+
+  <rect x="390" y="130" width="320" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="550" y="157" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">Read attendance.txt</text>
+  <text x="550" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#334155">One raw student name per line</text>
+
+  <path d="M710 162 H780" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrowAmber)" fill="none"/>
+  <text x="745" y="154" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#b45309">missing file</text>
+  <rect x="780" y="130" width="240" height="64" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="900" y="156" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#b45309">FileNotFoundError / OSError</text>
+  <text x="900" y="175" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#334155">Print the error; return an empty list</text>
+
+  <path d="M550 194 V220" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  <path d="M550 220 L700 260 L550 300 L400 260 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="550" y="265" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#6d28d9">Any non-empty names?</text>
+
+  <path d="M700 260 H780" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrowRed)" fill="none"/>
+  <text x="740" y="252" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#b91c1c">no</text>
+  <rect x="780" y="225" width="240" height="70" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="900" y="252" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#b91c1c">No records to clean</text>
+  <text x="900" y="271" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#334155">Show the report and exit without a CSV</text>
+  <path d="M900 295 V330" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrowRed)" fill="none"/>
+  <rect x="800" y="330" width="200" height="46" rx="23" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="900" y="359" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#15803d">END</text>
+
+  <path d="M550 300 V330" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  <rect x="370" y="330" width="360" height="70" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="550" y="357" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">Clean names with a list comprehension</text>
+  <text x="550" y="377" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="11.5" fill="#334155">" ".join(name.strip().split()).title()</text>
+
+  <rect x="40" y="338" width="250" height="54" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="165" y="359" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#b45309">Loop over every record</text>
+  <text x="165" y="377" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#334155">Same rule applied to each name</text>
+  <path d="M290 365 H370" stroke="#d97706" stroke-width="1.5" fill="none" marker-end="url(#arrowAmber)"/>
+
+  <path d="M550 400 V420" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  <rect x="370" y="420" width="360" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="550" y="446" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">Use a set for unique students</text>
+  <text x="550" y="465" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#334155">Removes case- and spacing-normalized duplicates</text>
+
+  <path d="M550 480 V500" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  <rect x="370" y="500" width="360" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="550" y="526" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">Sort alphabetically</text>
+  <text x="550" y="545" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#334155">The final list is deterministic and easy to scan</text>
+
+  <path d="M550 560 V580" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  <rect x="370" y="580" width="360" height="60" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="550" y="606" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#15803d">Write attendance_clean.csv</text>
+  <text x="550" y="625" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#334155">Header row plus one sorted name per row</text>
+
+  <path d="M550 640 V660" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  <rect x="350" y="660" width="400" height="70" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="550" y="687" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#15803d">Show the cleaning report</text>
+  <text x="550" y="707" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#334155">Original records, unique count, and cleaned list</text>
+
+  <path d="M550 730 V760" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  <rect x="450" y="760" width="200" height="46" rx="23" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="550" y="790" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#15803d">END</text>
+</svg>

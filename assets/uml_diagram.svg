@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900" role="img" aria-labelledby="umlTitle umlDesc">
+  <title id="umlTitle">Module UML diagram</title>
+  <desc id="umlDesc">Module diagram showing the two Python modules, their constants, functions, call relationships, and the data files they read or write.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="900" fill="#ffffff"/>
+  <text x="40" y="30" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0f172a">UML Module Diagram</text>
+  <text x="40" y="50" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748b">Procedural design: files, constants, functions, «calls» arrows, and external data files.</text>
+
+  <rect x="40" y="70" width="500" height="520" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <rect x="40" y="70" width="500" height="50" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="60" y="101" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="700" fill="#1d4ed8">expense_tracker.py</text>
+  <text x="520" y="101" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-style="italic" fill="#475569">«module»</text>
+
+  <rect x="60" y="135" width="460" height="80" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="75" y="157" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="1">CONSTANTS</text>
+  <text x="75" y="177" font-family="Consolas, Courier New, monospace" font-size="11" fill="#334155">EXPENSES_FILE = Path("expenses.csv")</text>
+  <text x="75" y="194" font-family="Consolas, Courier New, monospace" font-size="11" fill="#334155">CSV_FIELDS = ["date", "item", "category", "amount"]</text>
+  <text x="75" y="211" font-family="Consolas, Courier New, monospace" font-size="11" fill="#334155">MENU_OPTIONS = ("1", "2", "3", "4")</text>
+
+  <rect x="60" y="245" width="170" height="70" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="145" y="274" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="13" font-weight="700" fill="#6d28d9">main()</text>
+  <text x="145" y="294" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#475569">menu loop</text>
+
+  <rect x="260" y="245" width="260" height="80" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="275" y="266" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">Input validators</text>
+  <text x="275" y="285" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">prompt_date()</text>
+  <text x="275" y="301" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">prompt_non_empty()</text>
+  <text x="275" y="317" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">prompt_amount()</text>
+
+  <rect x="260" y="345" width="260" height="80" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="275" y="366" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">CSV I/O</text>
+  <text x="275" y="385" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">load_expenses()</text>
+  <text x="275" y="401" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">save_expenses()</text>
+
+  <rect x="260" y="445" width="260" height="80" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="275" y="466" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">Menu actions</text>
+  <text x="275" y="485" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">add_expense()  show_expenses()</text>
+  <text x="275" y="501" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">show_category_totals()</text>
+  <text x="275" y="517" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">print_menu()</text>
+
+  <path d="M230 280 H245 V485" stroke="#475569" stroke-width="1.3" fill="none"/>
+  <path d="M245 285 H260" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow)" fill="none"/>
+  <path d="M245 385 H260" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow)" fill="none"/>
+  <path d="M245 485 H260" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow)" fill="none"/>
+  <text x="236" y="270" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-style="italic" fill="#64748b">«calls»</text>
+
+  <rect x="560" y="70" width="500" height="520" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+  <rect x="560" y="70" width="500" height="50" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="580" y="101" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="700" fill="#6d28d9">attendance_cleaner.py</text>
+  <text x="1040" y="101" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-style="italic" fill="#475569">«module»</text>
+
+  <rect x="580" y="135" width="460" height="80" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="595" y="157" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="1">CONSTANTS</text>
+  <text x="595" y="177" font-family="Consolas, Courier New, monospace" font-size="11" fill="#334155">INPUT_FILE = Path("attendance.txt")</text>
+  <text x="595" y="194" font-family="Consolas, Courier New, monospace" font-size="11" fill="#334155">OUTPUT_FILE = Path("attendance_clean.csv")</text>
+  <text x="595" y="211" font-family="Consolas, Courier New, monospace" font-size="11" fill="#334155">OUTPUT_HEADER = ["student_name"]</text>
+
+  <rect x="580" y="245" width="170" height="70" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="665" y="274" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="13" font-weight="700" fill="#6d28d9">main()</text>
+  <text x="665" y="294" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#475569">orchestration</text>
+
+  <rect x="780" y="245" width="260" height="90" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="795" y="266" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">Input and cleaning</text>
+  <text x="795" y="285" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">read_attendance()</text>
+  <text x="795" y="301" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">clean_names()</text>
+
+  <rect x="780" y="355" width="260" height="90" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="795" y="376" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">Set, sort, and save</text>
+  <text x="795" y="395" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">unique_sorted_names()</text>
+  <text x="795" y="411" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">write_clean_names()</text>
+
+  <rect x="780" y="465" width="260" height="80" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="795" y="486" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">Report</text>
+  <text x="795" y="505" font-family="Consolas, Courier New, monospace" font-size="10.5" fill="#334155">print_report()</text>
+
+  <path d="M750 280 H765 V505" stroke="#475569" stroke-width="1.3" fill="none"/>
+  <path d="M765 290 H780" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow)" fill="none"/>
+  <path d="M765 400 H780" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow)" fill="none"/>
+  <path d="M765 505 H780" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow)" fill="none"/>
+  <text x="756" y="270" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-style="italic" fill="#64748b">«calls»</text>
+
+  <text x="40" y="630" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="1">EXTERNAL DATA FILES</text>
+
+  <path d="M170 590 V670" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrowGreen)" fill="none"/>
+  <rect x="70" y="670" width="200" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="170" y="700" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="14" font-weight="700" fill="#15803d">expenses.csv</text>
+  <text x="170" y="722" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#334155">loaded and overwritten</text>
+  <text x="180" y="642" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-style="italic" fill="#15803d">«reads/writes»</text>
+
+  <path d="M700 590 V620 H410 V670" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+  <rect x="310" y="670" width="200" height="80" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="410" y="700" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="14" font-weight="700" fill="#1d4ed8">attendance.txt</text>
+  <text x="410" y="722" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#334155">raw names, one per line</text>
+  <text x="425" y="642" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-style="italic" fill="#1d4ed8">«reads»</text>
+
+  <path d="M850 590 V640 H660 V670" stroke="#16a34a" stroke-width="1.5" fill="none" marker-end="url(#arrowGreen)"/>
+  <rect x="550" y="670" width="220" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="660" y="700" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="13.5" font-weight="700" fill="#15803d">attendance_clean.csv</text>
+  <text x="660" y="722" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#334155">sorted unique names</text>
+  <text x="675" y="642" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-style="italic" fill="#15803d">«writes»</text>
+
+  <rect x="810" y="670" width="220" height="80" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="920" y="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#475569">Standard library only</text>
+  <text x="920" y="721" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#64748b">csv, pathlib, datetime, math</text>
+
+  <text x="40" y="800" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748b">Each script is an independent module. main() coordinates the functions inside its own file; there are no cross-module function calls.</text>
+  <text x="40" y="820" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748b">The arrows between modules and data files show the persistence boundary: one CSV for expenses, one text input and one CSV output for attendance.</text>
+</svg>
